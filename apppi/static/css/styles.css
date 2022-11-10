@@ -1,0 +1,55 @@
+html, body {
+   font-family: 'Arial';
+   margin: 0;
+   padding: 0;
+   height: 100%;
+   width: 100%;
+   color: #FFFFFF;
+}
+a {
+   color: #0059b2;
+   text-decoration: none;
+}
+a:hover {
+   color: #CC0000;
+   text-decoration: underline;
+}
+
+ul.mainmenu {
+   list-style: none;
+   background: #3F4137;
+   height: 60px;
+   margin: 0;
+   padding: 0;
+   color: #fdc073;
+   font-size: 20px;
+   overflow: hidden;
+}
+ul.mainmenu li {
+   float: left;
+   margin: 18px 40px 0 50px;
+}
+ul.mainmenu li.last {float: right;}
+
+ul.mainmenu li a {
+   color: #fdc073;
+   text-decoration: none;
+}
+ul.mainmenu li a:hover {
+   color: #FDA83D;
+}
+body {
+background-color: #333;
+background-image: url('https://mobimg.b-cdn.net/v3/fetch/60/604f6358cd0a4b83989516f724ed8bea.jpeg');
+}
+
+table {
+    width: 50%; /* Ширина таблицы */
+    background: white; /* Цвет фона таблицы */
+    color: white; /* Цвет текста */
+    border-spacing: 1px; /* Расстояние между ячейками */
+   }
+   td, th {
+    background: maroon; /* Цвет фона ячеек */
+    padding: 10px; /* Поля вокруг текста */
+   }
