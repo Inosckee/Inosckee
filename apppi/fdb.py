@@ -52,4 +52,4 @@ if __name__ == '__main__':
     print(db.setMenu('Добавить статью', 'posts'))
 
     # print(db.delMenu(5))
-    # create_db()
+     # create_db()
