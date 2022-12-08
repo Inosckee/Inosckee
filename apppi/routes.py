@@ -8,7 +8,7 @@ menu = [{"name": 'Главная', "url": 'index'}, {"name": 'О програм�
 @app.route('/')
 @app.route('/index')
 def index():
-    best_pi = {'username': 'Елизавета'}
+    best_pi = {'username': 'Данила'}
 
     return render_template('index.html', title='2022 Forever', user=best_pi, menu=menu)
 
