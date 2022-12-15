@@ -1,8 +1,18 @@
-from apppi import app
-from flask import render_template
+from apppi import app, connect_db
+from flask import render_template, g
 from random import choice
 
-menu = [{"name": 'Главная', "url": 'index'}, {"name": 'О программе', "url": 'about'}, {"name": 'Помощь', "url": 'help'}, {"name": 'Об разработчике', "url": 'my'}]
+menu = [{"name": 'Главная', "url": 'index'}, {"name": 'О программе', "url": 'about'}, {"name": 'Помощь', "url": 'help'}, {"name": 'Об разработчике', "url": 'my'}, {"name": 'Главная БД', "url": 'index_db'}]
+
+def get_db():
+    if not hasattr(g, 'link_db'):
+        g.link_db = connect_db()
+    return g.link_db
+
+@app.teardown_appcontext
+def close_db(error):
+    if hasattr(g, 'link_db'):
+        g.link_db.close()
 
 
 @app.route('/')
@@ -26,3 +36,8 @@ def about():
 @app.route('/my')
 def my():
     return render_template('my.html', menu=menu)
+
+@app.route('/index_db')
+def index_db():
+    db = get_db()
+    return render_template('index_db.html', menu=[])
